@@ -79,14 +79,24 @@ nav {
 }
 
 main {
-    width: 60vw; /* define a largura do main como 60% da largura da viewport */
-    margin: 0 auto; /* centraliza o conteúdo horizontalmente */
+    display: flex;
+
+    margin: 0 auto; /* centraliza o main horizontalmente */
+
+    padding: 2rem 0;
+
+    width: 80vw; /* define a largura do main como 60% da largura da viewport */
+    justify-content: center;
+    align-items: center;
 }
 
 .card-selection {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
     text-align: center;
+
+    flex-wrap: wrap; /* permite que os cards quebrem para a próxima linha se não houver espaço suficiente */
 }
 
 .card {
@@ -96,7 +106,7 @@ main {
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    width: 100%; /* Faz o card ocupar 100% da largura do container pai */
+    width: 15rem; /* Faz o card ocupar 30% da largura do container pai */
    
     transition: 0.4s; /* adiciona uma transição suave para a mudança de cor */
 
@@ -114,4 +124,56 @@ main {
     font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+.tool-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    
+    width: 100%;
+    padding: 2rem;
+    
+    background-color: var(--card-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 10PX rgba(0, 0, 0, 0.05);
+}
+
+.tool-container-title {
+    text-align: center;
+}
+
+.tool-container title g2 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.tool-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
